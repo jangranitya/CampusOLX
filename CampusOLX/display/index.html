@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User/Admin Home - CampusOLX</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, <span id="userRole">User</span>!</h1>
+
+        <div class="home-content">
+            <p>Hello, <span id="username">current_username</span>! You are logged in as a <span id="role">User</span>.</p>
+            <button id="editProfileButton" class="btn">Edit Profile</button>
+
+            <div id="adminActions" class="admin-section">
+                <h2>Admin Dashboard</h2>
+                <ul>
+                    <li>Manage Users</li>
+                    <li>Approve Listings</li>
+                    <li>View Reports</li>
+                </ul>
+            </div>
+
+            <div id="userActions" class="user-section">
+                <h2>User Dashboard</h2>
+                <ul>
+                    <li>View My Listings</li>
+                    <li>Create New Listing</li>
+                    <li>Edit Profile</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="home.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+/* Universal Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #FDF6E3, #F7F3EB); /* Softer, lighter pastel background */
+    color: #333;
+    padding: 0 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #ffffff; /* Clean white container */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.02); /* Subtle scale on hover */
+    /* background-color: #FFF8E7;  */
+}
+
+/* Headings */
+h1 {
+    font-size: 28px;
+    color: #212880; /* Dark blue */
+    margin-bottom: 25px;
+    transition: color 0.3s ease;
+}
+
+h1:hover {
+    color: #7C85E1; /* Lighter hover color */
+}
+
+/* Form Styles */
+form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    transition: all 0.3s ease;
+}
+
+label {
+    font-size: 16px;
+    color: #212880;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #bdc3c7; /* Light gray border */
+    border-radius: 8px;
+    background-color: #ecf0f1;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #535FD7; /* Main color */
+    box-shadow: 0 0 8px rgba(83, 95, 215, 0.4);
+}
+
+/* Buttons */
+button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #535FD7; /* Main blue */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #212880; /* Darker blue */
+    transform: translateY(-3px); /* Small pop on hover */
+    box-shadow: 0 4px 12px rgba(33, 40, 128, 0.15); /* Subtle shadow */
+}
+
+/* Message */
+#message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #7C85E1; /* Success message color */
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Subtle Tertiary Background for Special Sections */
+.special-section {
+    background-color: #FFF8E7; /* Softer, light tertiary background */
+    padding: 20px;
+    border-radius: 8px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}

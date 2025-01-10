@@ -1,0 +1,137 @@
+/* Universal Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Light gray background for a clean look */
+    color: #333;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 1000px; /* Expanded container width for a more spacious layout */
+    margin: 30px auto; /* Reduced top margin for a more balanced look */
+    background: url('bgim.avif') no-repeat center center; /* Background image */
+    background-size: cover; /* Ensures the image covers the container */
+    padding: 40px; /* Increased padding for more space inside */
+    border-radius: 8px; /* Slightly smaller border-radius for a more professional look */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Enhanced shadow for a subtle depth effect */
+    text-align: center;
+    transition: transform 0.3s ease;
+    color: #ffffff; /* Adjust text color for contrast against background */
+}
+
+.container:hover {
+    transform: scale(1.02); /* Subtle scale effect */
+}
+
+/* Headings */
+h1 {
+    font-size: 36px; /* Larger font size for a more prominent heading */
+    color: #ffffff; /* White color for headings to contrast against background */
+    margin-bottom: 30px; /* Increased spacing for better separation */
+    transition: color 0.3s ease;
+}
+
+h1:hover {
+    color: #535FD7; /* Purple-blue hover color */
+}
+
+/* Home Page Content */
+.home-content {
+    margin: 40px 0; /* Increased margin for better spacing */
+}
+
+p {
+    font-size: 20px; /* Larger font size for improved readability */
+    margin-bottom: 15px; /* Increased margin for better spacing */
+    color: #ffffff; /* Adjust text color for contrast against background */
+}
+
+/* List Items */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: rgba(236, 240, 241, 0.8); /* Slightly transparent light gray */
+    color: #2c3e50;
+    padding: 15px; /* Increased padding for better content spacing */
+    margin-bottom: 15px; /* Increased margin for better separation */
+    border-radius: 8px;
+    font-size: 18px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+ul li:hover {
+    background-color: rgba(223, 231, 236, 0.8); /* Slightly lighter gray-blue on hover */
+    transform: translateX(5px); /* Slide slightly on hover */
+}
+
+/* Admin/User Section Headings */
+.admin-section h2, .user-section h2 {
+    font-size: 28px; /* Larger font size for section headings */
+    color: #ffffff; /* White color for section headings to contrast against background */
+    margin-bottom: 20px; /* Increased margin for better separation */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: letter-spacing 0.3s ease;
+}
+
+.admin-section h2:hover, .user-section h2:hover {
+    letter-spacing: 2px;
+}
+
+/* Buttons */
+button {
+    padding: 14px 30px; /* Increased padding for larger buttons */
+    font-size: 18px; /* Larger font size for better readability */
+    background-color: #535FD7; /* Purple-blue button color */
+    color: white;
+    border: none;
+    margin-bottom: 20px; /* Increased margin for better spacing */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #212880; /* Darker blue hover */
+    transform: translateY(-3px); /* Small pop effect */
+    box-shadow: 0 4px 15px rgba(83, 95, 215, 0.3); /* Enhanced shadow for a more pronounced effect */
+}
+
+#editProfileButton {
+    margin-top: 30px; /* Increased margin-top for better spacing */
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Full-Page Coverage */
+.full-page {
+    padding: 30px; /* Increased padding for better spacing */
+    margin: 0;
+    min-height: 100vh; /* Ensures it covers the full viewport height */
+}
+
+.full-page .container {
+    margin: 0;
+    border-radius: 8px; /* Maintain the border-radius for consistency */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Maintain shadow for consistency */
+}
