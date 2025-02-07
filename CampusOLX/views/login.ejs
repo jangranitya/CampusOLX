@@ -1,0 +1,57 @@
+
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <h1 style="color: rgb(59, 10, 69); text-align: center; font-weight: bold;">Login</h1>
+
+  <div class="row justify-content-center">
+    <div class="col-sm-8">
+      <div class="card" style="background-color: white; border: 2px solid rgb(59, 10, 69);">
+        <div class="card-body" style="color: rgb(59, 10, 69);">
+            <!-- Alert for displaying messages -->
+          <% if (typeof message !== 'undefined') { %>
+            <div class="alert alert-danger text-center" role="alert">
+              <%= message %>
+            </div>
+          <% } %>
+          <form action="/login" method="POST">
+            <div class="form-group mb-3">
+              <label for="email" style="color: rgb(59, 10, 69);">Email</label>
+              <input type="email" class="form-control" name="username" id="email" 
+                     placeholder="Enter your email" required 
+                     aria-label="Email" 
+                     style="background-color: white; color: rgb(59, 10, 69); border: 1px solid rgb(59, 10, 69);">
+            </div>
+            <div class="form-group mb-4">
+              <label for="password" style="color: rgb(59, 10, 69);">Password</label>
+              <input type="password" class="form-control" name="password" id="password" 
+                     placeholder="Enter your password" required 
+                     aria-label="Password" 
+                     style="background-color: white; color: rgb(59, 10, 69); border: 1px solid rgb(59, 10, 69);">
+            </div>
+            <button type="submit" class="btn" 
+                    style="background-color: rgb(111, 6, 132); color: white; font-weight: bold; width: 100%;">Login</button>
+          </form>
+             <div class="text-center mt-3">
+            <a href="/fp" style="color: rgb(59, 10, 69); font-weight: bold; text-decoration: underline;">
+              Forgot Password?
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  body {
+    background-image: url("campus2.jpg"); 
+     background-size: cover;
+   
+  }
+</style>
+
+
+<%- include('partials/footer') %>
+
+

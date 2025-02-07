@@ -1,0 +1,116 @@
+
+<%- include('partials/header') %>
+<style>
+  body {
+    background-image: url("/campus2.jpg");
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+
+  h1 {
+    text-align: center;
+    color: #4c2e7d; /* Plum color */
+    margin-bottom: 30px;
+  }
+
+  .container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #422670; /* Plum color */
+    color: white;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  button {
+    background-color: #6a4c9c; /* Plum color */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  button:hover {
+    background-color: #542e7a; /* Darker plum */
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  .btn-danger {
+    background-color: #ac140a; /* Red for danger */
+  }
+
+  .btn-danger:hover {
+    background-color: #ac140a;
+  }
+
+  /* Optional: Styling for the table's actions */
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .btn-danger {
+    width: 100px;
+  }
+</style>
+
+<div class="container mt-5">
+  <h1>Welcome Sunny Garg!!</h1>
+  <h2>Manage Users</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(user => { %>
+        <tr>
+          <td><%= user.email %></td>
+          <td><%= user.name %></td>
+          <td>
+            <form action="/admin/delete-user/<%= user.id %>" method="POST" style="display:inline;">
+              <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+   
+</div>
+
+
+<%- include('partials/footer') %>

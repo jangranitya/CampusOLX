@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forget Password</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('/campus2.jpg'); /* Replace with your image path */
+      background-size: cover;
+      
+      color: rgb(59, 10, 69);
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      text-align: center;
+      color: rgb(59, 10, 69);
+      font-size: 2rem;
+      margin-top: 50px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 40px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: rgb(59, 10, 69);
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 2px solid rgb(59, 10, 69);
+      border-radius: 5px;
+      font-size: 1rem;
+      color: rgb(59, 10, 69);
+      outline: none;
+    }
+
+    input:focus {
+      border-color: darkmagenta;
+    }
+
+    button {
+      background-color: rgb(59, 10, 69);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: darkmagenta;
+    }
+
+    footer {
+      background-color: rgb(59, 10, 69);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Forgot Password</h2>
+
+  <div class="container">
+    <!-- Form to input email for OTP request -->
+    <form id="request-otp-form" method="POST" action="/send-otp" class="form-container">
+      <label for="email">Enter your email</label>
+      <input type="email" id="email" name="email" required>
+      <button type="submit">Send OTP</button>
+    </form>
+
+    <!-- Form to input OTP and reset password -->
+    <form id="verify-otp-form" method="POST" action="/verify-otp" style="display: none;" class="form-container">
+      <label for="otp">Enter OTP</label>
+      <input type="text" id="otp" name="otp" required>
+      <button type="submit">Verify OTP</button>
+    </form>
+
+    <!-- Form for password reset -->
+    <form id="reset-password-form" method="POST" action="/reset-password" style="display: none;" class="form-container">
+      <label for="new-password">Enter New Password</label>
+      <input type="password" id="new-password" name="newPassword" required>
+      <button type="submit">Reset Password</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 My Website</p>
+  </footer>
+
+  <script>
+    // Toggle between forms after OTP request
+    const requestOtpForm = document.getElementById("request-otp-form");
+    const verifyOtpForm = document.getElementById("verify-otp-form");
+    const resetPasswordForm = document.getElementById("reset-password-form");
+
+    requestOtpForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      const email = document.getElementById("email").value;
+
+      const response = await fetch("/send-otp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email })
+      });
+      const data = await response.json();
+      if (data.success) {
+        requestOtpForm.style.display = "none";
+        verifyOtpForm.style.display = "block";
+      } else {
+        alert(data.message);
+      }
+    });
+
+    verifyOtpForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      const otp = document.getElementById("otp").value;
+
+      const response = await fetch("/verify-otp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ otp })
+      });
+      const data = await response.json();
+      if (data.success) {
+        verifyOtpForm.style.display = "none";
+        resetPasswordForm.style.display = "block";
+      } else {
+        alert(data.message);
+      }
+    });
+  </script>
+</body>
+</html>

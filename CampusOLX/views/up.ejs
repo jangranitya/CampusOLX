@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <style>
+    body {
+      background-color: white;
+      color: rgb(59, 10, 69);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-image: url('/campus2.jpg'); /* Update with correct path */
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    .profile-container {
+      background-color: #f3e5f5;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: rgb(59, 10, 69);
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .profile-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding: 10px;
+      background-color: white;
+      border: 1px solid rgb(59, 10, 69);
+      border-radius: 8px;
+    }
+
+    .profile-item label {
+      font-weight: bold;
+    }
+
+    .profile-item p {
+      margin: 0;
+      color: #6a1b9a;
+      font-style: italic;
+    }
+
+    .profile-photo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .profile-photo img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      border: 2px solid rgb(59, 10, 69);
+    }
+
+    .edit-button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: rgb(59, 10, 69);
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      transition: background-color 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .edit-button:hover {
+      background-color: #ab47bc;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <h1>User Profile</h1>
+
+    <div class="profile-photo">
+      <% if (userProfile.profile_photo) { %>
+        <img src="<%= userProfile.profile_photo %>" alt="Profile Photo">
+      <% } else { %>
+        <p>No profile photo available</p>
+      <% } %>
+    </div>
+    
+    <div class="profile-item">
+      <label>Email:</label>
+      <p><%= userProfile.email %></p>
+    </div>
+    
+    <div class="profile-item">
+      <label>Name:</label>
+      <p><%= userProfile.name ? userProfile.name : "Not provided" %></p>
+    </div>
+
+    <div class="profile-item">
+      <label>Enrollment Number:</label>
+      <p><%= userProfile.enroll_no ? userProfile.enroll_no : "Not provided" %></p>
+    </div>
+
+    <div class="profile-item">
+      <label>Contact Number:</label>
+      <p><%= userProfile.contact ? userProfile.contact : "Not provided" %></p>
+    </div>
+
+    <div class="profile-item">
+      <label>Room Number:</label>
+      <p><%= userProfile.room_no ? userProfile.room_no : "Not provided" %></p>
+    </div>
+
+    <button class="edit-button" onclick="window.location.href='/edit-profile'">Edit Profile</button>
+    <button class="edit-button" onclick="window.location.href='/pro'">View Products</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us - College Marketplace</title>
+  <style>
+    /* Basic page styling */
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+      background-image: url('/campus2.jpg'); /* Replace with the path to your image */
+      background-size: cover;
+      color: rgb(59, 10, 69);
+    }
+
+    main {
+      flex-grow: 1;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: rgb(59, 10, 69);
+      color: white;
+      padding: 10px 0;
+      font-size: 0.9em;
+      text-align: center;
+    }
+
+    /* Header styling */
+    header {
+      background-color: rgb(59, 10, 69);
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      color: #fff;
+      font-size: 36px;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+      border-left: 5px solid rgb(59, 10, 69);
+      padding: 15px;
+      background-color: #fafafa;
+      border-radius: 5px;
+      transition: transform 0.2s;
+      display: flex;
+      align-items: center;
+    }
+
+    .section:hover {
+      transform: translateY(-5px);
+      background-color: #fff;
+    }
+
+    .section h2 {
+      color: rgb(59, 10, 69);
+      font-size: 24px;
+      margin: 0 0 10px;
+    }
+
+    .section p {
+      color: #333;
+      line-height: 1.6;
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .section-icon {
+      font-size: 36px;
+      margin-right: 20px;
+      color: rgb(59, 10, 69);
+    }
+
+    /* Team table styling */
+    .team-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .team-table th, .team-table td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .team-table th {
+      background-color: rgb(59, 10, 69);
+      color: white;
+    }
+
+    .team-table td {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>About Us</h1>
+  </header>
+  <main>
+    <div class="section">
+      <div class="section-icon">🎯</div>
+      <div>
+        <h2>Our Mission</h2>
+        <p>To create a secure and trustworthy platform for college students to connect and trade within their campus community.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-icon">🌟</div>
+      <div>
+        <h2>What We Offer</h2>
+        <p>An intuitive marketplace designed by students for students, allowing easy trading within campus with verified security.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-icon">🔮</div>
+      <div>
+        <h2>Our Vision</h2>
+        <p>'To become the most accessible resource for every student's campus needs, fostering a supportive marketplace.'</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-icon">👥</div>
+      <div>
+        <h2>Meet the Team</h2>
+        <p>A team of dedicated students using technical expertise to create a community-driven marketplace.</p>
+        <table class="team-table">
+          <tr>
+            <th>Name</th>
+            <th>Enrollment Number</th>
+            <th>Role</th>
+          </tr>
+          <tr>
+            <td>Sunny Garg</td>
+            <td>IIT2023108</td>
+            <td>Full Stack Developer</td>
+          </tr>
+          <tr>
+            <td>Divyansh Aggarwal</td>
+            <td>IIT2023111</td>
+            <td>Front End Developer</td>
+          </tr>
+          <tr>
+            <td>Shraddha Srivastava</td>
+            <td>IIT2023114</td>
+            <td>Backend Developer</td>
+          </tr>
+          <tr>
+            <td>Hardik Batra</td>
+            <td>IIT2023115</td>
+            <td>Backend Developer</td>
+          </tr>
+          <tr>
+            <td>Nitya Jangra</td>
+            <td>IIT2023116</td>
+            <td>Designer</td>
+          </tr>
+          <tr>
+            <td>Kavya Mitruka</td>
+            <td>IIT2023199</td>
+            <td>Designer</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </main>
+  <footer>
+    © 2024 College Marketplace. All rights reserved.
+  </footer>
+</body>
+</html>

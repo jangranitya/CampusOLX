@@ -1,0 +1,113 @@
+<%- include('partials/header') %>
+<style>
+  body {
+    background-image: url('/campus2.jpg');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+
+  h1 {
+    text-align: center;
+    color: #4c3275; /* Plum color */
+    margin-bottom: 30px;
+  }
+
+  .container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #472a76; /* Plum color */
+    color: white;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  button {
+    background-color: #40246d; /* Plum color */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  button:hover {
+    background-color: #51277b; /* Darker plum */
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  .btn-danger {
+    background-color: #9e1910; /* Red for danger */
+  }
+
+  .btn-danger:hover {
+    background-color: #9e1910;
+  }
+
+  /* Optional: Styling for the table's actions */
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .btn-danger {
+    width: 100px;
+  }
+</style>
+
+<div class="container mt-5">
+    <h1>Welcome Sunny Garg !! </h1>
+  <h2> Manage Products</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% posts.forEach(post => { %>
+        <tr>
+          <td><%= post.title %></td>
+          <td><%= post.content %></td>
+          <td>
+            <form action="/admin/delete-product/<%= post.id %>" method="POST" style="display:inline;">
+              <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('partials/footer') %>

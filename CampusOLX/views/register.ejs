@@ -1,0 +1,104 @@
+<!-- <div class="container mt-5">
+  <h1 style="color: plum; text-align: center; font-weight: bold;">Register</h1>
+
+  <div class="row justify-content-center">
+    <div class="col-sm-8">
+      <div class="card" style="background-color: white; border: 2px solid plum;">
+        <div class="card-body" style="color: plum;">
+
+        
+          <form action="/register" method="POST" onsubmit="return validateForm()">
+            <div class="form-group mb-3">
+              <label for="email" style="color: plum;">Email</label>
+              <input type="email" class="form-control" name="username" id="email" style="background-color: white; color: plum; border: 1px solid plum;" required>
+            </div>
+            <div class="form-group mb-4">
+              <label for="password" style="color: plum;">Password</label>
+              <input type="password" class="form-control" name="password" id="password" style="background-color: white; color: plum; border: 1px solid plum;" required>
+            </div>
+            <button type="submit" class="btn" style="background-color: plum; color: white; font-weight: bold; width: 100%;">Register</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function validateForm() {
+    const email = document.getElementById("email").value;
+    const iiitaDomain = "@iiita.ac.in";
+    
+    if (!email.endsWith(iiitaDomain)) {
+      alert("Please enter a valid email ");
+      return false; // Prevents form submission
+    }
+    
+    return true; // Allows form submission if validation passes
+  }
+</script> -->
+
+
+ <%- include('partials/header') %>
+ <div class="container mt-5">
+  <h1 style="color: rgb(59, 10, 69); text-align: center; font-weight: bold;">Register</h1>
+
+  <div class="row justify-content-center">
+    <div class="col-sm-8">
+      <div class="card" style="background-color: white; border: 2px solid rgb(59, 10, 69);">
+        <div class="card-body" style="color: rgb(59, 10, 69);">
+
+          <!-- Makes POST request to /register route -->
+          <form action="/register" method="POST" onsubmit="return validateForm()">
+            <div class="form-group mb-3">
+              <label for="email" style="color: rgb(59, 10, 69);">Email</label>
+              <input type="email" class="form-control" name="username" id="email" style="background-color: white; color: rgb(59, 10, 69); border: 1px solid rgb(59, 10, 69);" required>
+            </div>
+            <div class="form-group mb-4">
+              <label for="password" style="color: rgb(59, 10, 69);">Password</label>
+              <input type="password" class="form-control" name="password" id="password" style="background-color: white; color: rgb(59, 10, 69); border: 1px solid rgb(59, 10, 69);" required>
+            </div>
+            <button type="submit" class="btn" style="background-color: rgb(59, 10, 69); color: white; font-weight: bold; width: 100%;">Register</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+ body {
+   background-image: url('campus2.jpg'); /* Add your background image path here */
+   background-size: cover;
+   
+ }
+</style>
+
+<script>
+  function validateForm() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const iiitaDomain = "@iiita.ac.in";
+ const passwordRegex = /^(?=.*[A-Z])(?=.*[@$_]).{8,}$/;
+
+    // Validate email domain
+    if (!email.endsWith(iiitaDomain)) {
+      alert("Your email ID must be of IIITA domain.");
+      return false; // Prevents form submission
+    }
+
+    // Validate password
+    if (!passwordRegex.test(password)) {
+      alert("Password must be at least 8 characters long and contain at least one uppercase letter and one special character");
+      return false; // Prevents form submission
+    }
+
+    return true; // Allows form submission if validation passes
+  }
+</script>
+
+ <%- include('partials/footer') %>
+ 
+

@@ -1,0 +1,26 @@
+.c1{
+  height: 1000px;
+  width: device-width;
+  background-image: url(/9.1+Authentication+Lv.1/public/campus1.jpeg);
+}
+.c11{
+  padding-top: 300px;
+  height: 500px;
+  font-size: 200px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: antiquewhite;
+  text-align: center;
+  
+}
+.c12{
+  padding-top: 50px;
+  font-size: 50px;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: antiquewhite;
+}
+.text-bg-dark {
+  color: #fff !important;
+  background-color: black !important;
+}
+
